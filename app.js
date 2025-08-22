@@ -2,6 +2,7 @@ let listaDeNumerosSorteados = [];
 let numeroLimite = 100;
 let numeroSecreto = gerarNumeroAleatorio();
 let tentativas = 1;
+console.log (numeroSecreto);
 
 function exibirTextoNaTela(tag, texto) {
     let campo = document.querySelector(tag);
@@ -27,9 +28,9 @@ function verificarChute() {
         document.getElementById('reiniciar').removeAttribute('disabled');
     } else {
         if (chute > numeroSecreto) {
-            exibirTextoNaTela('p', 'O número secreto é menor');
+            exibirTextoNaTela('p', `O número secreto é menor que ${chute}`);
         } else {
-            exibirTextoNaTela('p', 'O número secreto é maior');
+            exibirTextoNaTela('p', `O número secreto é maior ${chute}`);
         }
         tentativas++;
         limparCampo();
